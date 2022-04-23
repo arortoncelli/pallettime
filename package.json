@@ -1,0 +1,26 @@
+{
+  "name": "pallettime",
+  "version": "1.0.0",
+  "description": "Pellet-time: an innovative system to predict pellet consumption to heat broiler housing, using weather forecast data",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arortoncelli/pallettime.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arortoncelli/pallettime/issues"
+  },
+  "homepage": "https://github.com/arortoncelli/pallettime#readme",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.5"
+  }
+}
