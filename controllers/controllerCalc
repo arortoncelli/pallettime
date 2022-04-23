@@ -1,0 +1,24 @@
+
+module.exports = {
+    async getIndex(req, res) {
+        if (req.cookies.userData) {
+            console.log(req.cookies.userData);
+            res.render('home', req.cookies.userData);
+        }
+        else {
+            var dados = { v1: 0, v2: 0, v3: 0, valor: 0 }
+            console.log(dados)
+            res.cookie("userData", dados, { maxAge: 360 * 24 * 60 * 60 * 1000, httpOnly: true });
+            res.render('home', { v1: 0, v2: 0, v3: 0, valor: 0 });
+        }
+    },
+    async postCalc(req, res) {
+        console.log(req.body)
+        var {valor1, valor2, valor3} = req.body;
+        resultado = (-279.6930286 *1) + (valor1 * 25.27134871) + (valor2 * 13.52306646) - (valor3 * 23.38155923);
+        
+        var dados = { v1: valor1, v2: valor2, v3: valor3, valor: resultado }
+        res.cookie("userData", dados, { maxAge: 360 * 24 * 60 * 60 * 1000, httpOnly: true });
+        res.render('home', { v1: valor1, v2: valor2, v3: valor3, valor: resultado });
+    }
+}   
